@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loaderBar = document.querySelector('.frame-loader__bar');
     const loaderText = document.querySelector('.frame-loader__text');
     const scrollCards = scrollAnim.querySelectorAll('.scroll-card');
+    const scrollCardsContainer = scrollAnim.querySelector('.scroll-cards-container');
 
     function pad(n) { return String(n).padStart(4, '0'); }
 
@@ -193,6 +194,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const progress = Math.max(0, Math.min(1, scrolled / scrollHeight));
         const frameIndex = Math.round(progress * (frameCount - 1));
         drawFrame(frameIndex);
+
+        // Show/hide cards container based on scroll section visibility
+        if (scrollCardsContainer) {
+          const inView = rect.top < window.innerHeight && rect.bottom > 0;
+          scrollCardsContainer.style.display = inView ? '' : 'none';
+        }
 
         // Annotation cards
         scrollCards.forEach(card => {

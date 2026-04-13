@@ -532,6 +532,18 @@ h1, h2, h3, h4, h5, h6 {
   );
 }
 
+/* Cards container — fixed, outside the masked sticky */
+.scroll-cards-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
 .scroll-animation__canvas {
   max-width: 100%;
   max-height: 100vh;
@@ -556,7 +568,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
   transition: opacity 0.4s ease, transform 0.4s ease;
   z-index: 10;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .scroll-card.visible { opacity: 1; }
