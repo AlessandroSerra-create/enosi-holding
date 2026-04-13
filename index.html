@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Énosi Holding — Il partner strategico per le imprese italiane</title>
+  <meta name="description" content="Énosi Holding: il partner strategico per la crescita delle PMI italiane. Holding multidisciplinare con 15+ partecipate, 9 sedi nel mondo e un modello ibrido tra PE e VC.">
+
+  <!-- OG Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://enosi.it/">
+  <meta property="og:title" content="Énosi Holding — Il partner strategico per le imprese italiane">
+  <meta property="og:description" content="Énosi Holding: il partner strategico per la crescita delle PMI italiane. Holding multidisciplinare con 15+ partecipate e 9 sedi nel mondo.">
+  <meta property="og:image" content="assets/logo/og-image.png">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Énosi Holding">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logo/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar__logo"><img src="assets/logo/logo-white.png" alt="Énosi" class="nav-logo-img"></a>
+    <div class="navbar__links">
+      <a href="index.html" class="navbar__link active" data-i18n="nav.home">Home</a>
+      <a href="il-gruppo.html" class="navbar__link" data-i18n="nav.gruppo">Il Gruppo</a>
+      <a href="le-partecipate.html" class="navbar__link" data-i18n="nav.partecipate">Le Partecipate</a>
+      <a href="il-team.html" class="navbar__link" data-i18n="nav.team">Il Team</a>
+      <a href="portfolio.html" class="navbar__link" data-i18n="nav.portfolio">Portfolio</a>
+      <a href="contatti.html" class="navbar__link" data-i18n="nav.contatti">Contatti</a>
+      <div class="lang-switch">
+        <button class="lang active" data-lang="it">IT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang" data-lang="en">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang" data-lang="pt">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang" data-lang="fr">FR</button>
+      </div>
+      <a href="contatti.html" class="btn-nav-cta" data-i18n="nav.cta">Parliamone</a>
+    </div>
+    <button class="navbar__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="navbar__mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="il-gruppo.html">Il Gruppo</a>
+    <a href="le-partecipate.html">Le Partecipate</a>
+    <a href="il-team.html">Il Team</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="contatti.html" class="btn-primary btn-primary--light">Parliamone</a>
+  </div>
+</nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-slideshow">
+      <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80')"></div>
+      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80')"></div>
+      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80')"></div>
+      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1920&q=80')"></div>
+      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1553484771-047a44eee27b?w=1920&q=80')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero__title" data-i18n="home.hero.headline">Il partner strategico per le imprese italiane.</h1>
+      <p class="hero__subtitle" data-i18n="home.hero.subtitle">Énosi affianca le PMI nella crescita: come socio industriale, con competenze multidisciplinari, presenza globale e un metodo che crea valore reale.</p>
+      <a href="contatti.html" class="btn-primary btn-primary--light" data-i18n="home.hero.cta">Parliamone</a>
+    </div>
+    <div class="scroll-hint">
+      <svg class="scroll-hint__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      <span data-i18n="home.hero.scroll">Scopri di più</span>
+    </div>
+  </section>
+
+  <!-- FRAME LOADER -->
+  <div class="frame-loader">
+    <div class="frame-loader__bar-container">
+      <div class="frame-loader__bar"></div>
+    </div>
+    <div class="frame-loader__text">0%</div>
+  </div>
+
+  <!-- SCROLL ANIMATION -->
+  <section class="scroll-animation">
+  <div class="scroll-animation__sticky">
+    <canvas class="scroll-animation__canvas"></canvas>
+    <div class="scroll-card" data-show-from="0.1" data-show-to="0.3">
+      <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 000 20 14.5 14.5 0 000-20M2 12h20"/></svg></div>
+      <h3 data-i18n="home.card1.title">Radicati nel mondo</h3>
+      <p data-i18n="home.card1.text">Nove sedi operative su quattro continenti, per essere vicini dove conta.</p>
+      <p class="card-detail" data-i18n="home.card1.detail">Roma · Milano · Londra · Madrid · Lugano · Dubai · Miami · Kuala Lumpur</p>
+    </div>
+    <div class="scroll-card" data-show-from="0.3" data-show-to="0.5">
+      <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
+      <h3 data-i18n="home.card2.title">Un ecosistema in espansione</h3>
+      <p data-i18n="home.card2.text">Oltre 15 partecipate attive in più di 6 settori industriali.</p>
+      <p class="card-detail" data-i18n="home.card2.detail">ICT · Real Estate · MedTech · Food &amp; Beverage · Cybersecurity · Engineering</p>
+    </div>
+    <div class="scroll-card" data-show-from="0.5" data-show-to="0.7">
+      <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a1 1 0 001 1h4a1 1 0 001-1 1 1 0 00-1-1h-1a1 1 0 01-1-1 1 1 0 011-1h1a3 3 0 003-3 3 3 0 00-3-3h-1.5l-2-2H8l-4 4"/><path d="M3 13l4 4"/><path d="M8 7l5 5"/></svg></div>
+      <h3 data-i18n="home.card3.title">Dentro l'impresa, non fuori</h3>
+      <p data-i18n="home.card3.text">Entriamo nelle aziende come soci, non come osservatori distanti.</p>
+      <p class="card-detail" data-i18n="home.card3.detail">Partecipazioni di maggioranza e minoranza qualificata con ruolo attivo nella governance.</p>
+    </div>
+    <div class="scroll-card" data-show-from="0.7" data-show-to="0.9">
+      <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/></svg></div>
+      <h3 data-i18n="home.card4.title">Oltre un decennio di risultati</h3>
+      <p data-i18n="home.card4.text">Dal 2013, un percorso continuo di crescita, operazioni e valore creato.</p>
+      <p class="card-detail" data-i18n="home.card4.detail">2013: fondazione · 2022: acquisizione Finix/Fujitsu · Oggi: 15+ partecipate attive</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- PILLARS SECTION -->
+  <section class="section section--alt section-angled">
+    <div class="container">
+      <h2 class="heading-section fade-up" data-i18n="home.dna.title">Il nostro DNA</h2>
+      <div class="pillars-grid stagger-parent">
+
+        <div class="pillar-card stagger-item card-hover">
+          <div class="pillar-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a1 1 0 001 1h4a1 1 0 001-1 1 1 0 00-1-1h-1a1 1 0 01-1-1 1 1 0 011-1h1a3 3 0 003-3 3 3 0 00-3-3h-1.5l-2-2H8l-4 4"/><path d="M3 13l4 4"/><path d="M8 7l5 5"/></svg>
+          </div>
+          <h3 class="pillar-card__title" data-i18n="home.dna.unione.title">Unione</h3>
+          <p class="pillar-card__text" data-i18n="home.dna.unione.text">Énosi nasce dall'unione di idee, visione e competenze applicate. Non un team omogeneo, ma una rete multidisciplinare di professionisti che si integrano per affrontare ogni sfida da prospettive diverse. Un approccio etico e sostenibile che mette al centro la crescita condivisa di tutti gli attori coinvolti.</p>
+        </div>
+
+        <div class="pillar-card stagger-item card-hover">
+          <div class="pillar-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="3" cy="7" r="2"/><circle cx="12" cy="17" r="2"/><circle cx="21" cy="7" r="2"/><path d="M5 7h12M14 17h5l2-10"/></svg>
+          </div>
+          <h3 class="pillar-card__title" data-i18n="home.dna.metodo.title">Metodo</h3>
+          <p class="pillar-card__text" data-i18n="home.dna.metodo.text">L'esperienza non è un valore se non si traduce in azione. Énosi identifica le discontinuità nei mercati e nei modelli di business, e le trasforma in opportunità. Ogni intervento segue un processo strutturato: analisi, progettazione del modello di sviluppo, esecuzione. Niente improvvisazione — metodo replicabile, risultati misurabili.</p>
+        </div>
+
+        <div class="pillar-card stagger-item card-hover">
+          <div class="pillar-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L4 14h7l-2 7 9-11h-7l2-7z"/></svg>
+          </div>
+          <h3 class="pillar-card__title" data-i18n="home.dna.attitudini.title">Attitudini</h3>
+          <p class="pillar-card__text" data-i18n="home.dna.attitudini.text">Intuito, empatia, concretezza, flessibilità, velocità, efficacia. Non sono competenze tecniche — sono il modo in cui le persone di Énosi lavorano ogni giorno. La capacità di leggere un imprenditore, capirne le esigenze reali e rispondere con decisioni rapide e responsabili.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE TEASERS -->
+  <div class="page-teaser-grid">
+    <a href="il-gruppo.html" class="page-teaser" style="background:var(--bg-main)">
+      <span class="teaser-number">01</span>
+      <h3 data-i18n="home.teaser1.title">Il Gruppo</h3>
+      <p data-i18n="home.teaser1.text">Un modello ibrido tra private equity e venture capital. Scopri come operiamo al fianco delle PMI italiane.</p>
+      <span class="teaser-link" data-i18n="home.teaser1.link">Scopri di più &rarr;</span>
+    </a>
+    <a href="le-partecipate.html" class="page-teaser" style="background:var(--bg-alt)">
+      <span class="teaser-number">02</span>
+      <h3 data-i18n="home.teaser2.title">Le Partecipate</h3>
+      <p data-i18n="home.teaser2.text">Esplora l'ecosistema di Énosi Holding. Un universo di partecipate navigabile e interattivo.</p>
+      <span class="teaser-link" data-i18n="home.teaser2.link">Scopri di più &rarr;</span>
+    </a>
+    <a href="portfolio.html" class="page-teaser" style="background:var(--bg-alt)">
+      <span class="teaser-number">03</span>
+      <h3 data-i18n="home.teaser3.title">Portfolio</h3>
+      <p data-i18n="home.teaser3.text">15+ partecipate attive in 6 settori industriali. Un ecosistema diversificato in crescita continua.</p>
+      <span class="teaser-link" data-i18n="home.teaser3.link">Scopri di più &rarr;</span>
+    </a>
+    <a href="contatti.html" class="page-teaser" style="background:var(--bg-main)">
+      <span class="teaser-number">04</span>
+      <h3 data-i18n="home.teaser4.title">Contatti</h3>
+      <p data-i18n="home.teaser4.text">Nove sedi nel mondo. Ogni grande progetto inizia con una conversazione.</p>
+      <span class="teaser-link" data-i18n="home.teaser4.link">Scopri di più &rarr;</span>
+    </a>
+  </div>
+
+  <!-- MARQUEE SECTION -->
+  <section class="marquee-section section--main section-wave">
+    <div class="container" style="text-align:center">
+      <h2 class="heading-section fade-up" data-i18n="home.marquee.title">Le aziende che crescono con noi.</h2>
+    </div>
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <span class="marquee-item"><img src="assets/partners/enosispa.png" alt="Énosi S.p.A." style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/enosire.png" alt="Énosi Real Estate" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/consulting.png" alt="Énosi Consulting" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/ingenosi.png" alt="Ingenosi" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/digix.png" alt="Digix" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/finix.png" alt="Finix" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/aelodea.png" alt="Aelodea" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/edilmoaf.png" alt="Edil Moaf" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/celera.png" alt="Celera Digital" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/areacrm.png" alt="Area CRM" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/cyberangels.png" alt="Cyberangels" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/quasardam.png" alt="Quasardam" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/monserrato.png" alt="Imm. Monserrato" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/siag.png" alt="Yes Coffee" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/blackshield.png" alt="Blackshield" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/enosilab.png" alt="Énosi Lab" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/codex.png" alt="Codex" style="height:36px;width:auto;"></span>
+        <!-- Duplicate for infinite scroll -->
+        <span class="marquee-item"><img src="assets/partners/enosispa.png" alt="Énosi S.p.A." style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/enosire.png" alt="Énosi Real Estate" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/consulting.png" alt="Énosi Consulting" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/ingenosi.png" alt="Ingenosi" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/digix.png" alt="Digix" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/finix.png" alt="Finix" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/aelodea.png" alt="Aelodea" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/edilmoaf.png" alt="Edil Moaf" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/celera.png" alt="Celera Digital" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/areacrm.png" alt="Area CRM" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/cyberangels.png" alt="Cyberangels" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/quasardam.png" alt="Quasardam" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/monserrato.png" alt="Imm. Monserrato" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/siag.png" alt="Yes Coffee" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/blackshield.png" alt="Blackshield" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/enosilab.png" alt="Énosi Lab" style="height:36px;width:auto;"></span>
+        <span class="marquee-item"><img src="assets/partners/codex.png" alt="Codex" style="height:36px;width:auto;"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-section__title fade-up" data-i18n="home.cta.headline">Costruiamo valore insieme.</h2>
+      <p class="cta-section__subtitle fade-up" data-i18n="home.cta.subtitle">Ogni grande progetto inizia con una conversazione. Raccontaci la tua impresa.</p>
+      <a href="contatti.html" class="btn-primary btn-primary--light fade-up">Parliamone</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__logo">
+        <img src="assets/logo/logo-white.png" alt="Énosi" class="nav-logo-img" style="height:32px;margin:0 auto;">
+        <p style="color:rgba(255,255,255,0.4);font-size:0.85rem;margin-top:8px;font-family:'Inter',sans-serif;">Unione di idee, visione e competenze.</p>
+      </div>
+      <div class="footer__grid">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Sedi Italia</h4>
+          <p>Roma — Via Tirso 26, 00198</p>
+          <p>Milano — Via Brera 3, 20121</p>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Sedi Internazionali</h4>
+          <p>Londra</p>
+          <p>Madrid</p>
+          <p>Lugano</p>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Contatti</h4>
+          <p><a href="tel:+390680077119">+39 06 800 77 119</a></p>
+          <p><a href="tel:+390280500684">+39 02 80500684</a></p>
+          <p><a href="mailto:info@enosi.it">info@enosi.it</a></p>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Link</h4>
+          <p><a href="il-gruppo.html">Il Gruppo</a></p>
+          <p><a href="portfolio.html">Portfolio</a></p>
+          <p><a href="contatti.html">Contatti</a></p>
+          <p><a href="#">Privacy Policy</a></p>
+          <div class="footer__social">
+            <a href="#" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4m0 2a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 00-4 0"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 011-1h3V3h-3a5 5 0 00-5 5v2H7z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer__divider">
+      <div class="footer__bottom">
+        <p>&copy; 2026 Énosi Holding S.r.l. — P.IVA IT16200641005</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main Script -->
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

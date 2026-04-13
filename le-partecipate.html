@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Partecipate — Énosi Holding</title>
+  <meta name="description" content="La struttura societaria di Énosi Holding: un ecosistema di partecipate in 6+ settori industriali. Esplora le aziende che crescono con noi.">
+  <meta property="og:title" content="Énosi Holding — Le Partecipate">
+  <meta property="og:description" content="Esplora l'ecosistema di partecipate di Énosi Holding in un organigramma interattivo.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logo/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/orgchart.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled" style="background:rgba(26,10,14,0.95)">
+    <div class="container">
+      <a href="index.html" class="navbar__logo"><img src="assets/logo/logo-white.png" alt="Énosi" class="nav-logo-img"></a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link" data-i18n="nav.home">Home</a>
+        <a href="il-gruppo.html" class="navbar__link" data-i18n="nav.gruppo">Il Gruppo</a>
+        <a href="le-partecipate.html" class="navbar__link active" data-i18n="nav.partecipate">Le Partecipate</a>
+        <a href="il-team.html" class="navbar__link" data-i18n="nav.team">Il Team</a>
+        <a href="portfolio.html" class="navbar__link" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="contatti.html" class="navbar__link" data-i18n="nav.contatti">Contatti</a>
+        <div class="lang-switch">
+          <button class="lang active" data-lang="it">IT</button>
+          <span class="lang-sep">|</span>
+          <button class="lang" data-lang="en">EN</button>
+          <span class="lang-sep">|</span>
+          <button class="lang" data-lang="pt">PT</button>
+          <span class="lang-sep">|</span>
+          <button class="lang" data-lang="fr">FR</button>
+        </div>
+        <a href="contatti.html" class="btn-nav-cta" data-i18n="nav.cta">Parliamone</a>
+      </div>
+      <button class="navbar__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="il-gruppo.html">Il Gruppo</a>
+      <a href="le-partecipate.html">Le Partecipate</a>
+      <a href="il-team.html">Il Team</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contatti.html">Contatti</a>
+      <a href="contatti.html" class="btn-primary btn-primary--light">Parliamone</a>
+    </div>
+  </nav>
+
+  <!-- ORGCHART FULLSCREEN -->
+  <section class="orgchart-fullscreen">
+    <div class="orgchart-bg-glow orgchart-g1"></div>
+    <div class="orgchart-bg-glow orgchart-g2"></div>
+
+    <div class="orgchart-header">
+      <h1>La struttura del <span>Gruppo</span></h1>
+      <div class="orgchart-hint">
+        <span><kbd>scroll</kbd> zoom</span>
+        <span><kbd>drag</kbd> naviga</span>
+        <span><kbd>click</kbd> esplora</span>
+      </div>
+    </div>
+
+    <button class="orgchart-back" id="orgBackBtn" title="Vista completa">&#10005;</button>
+
+    <div class="orgchart-zoom-controls">
+      <button class="orgchart-zoom-btn" id="orgZoomIn">+</button>
+      <button class="orgchart-zoom-btn" id="orgZoomOut">&#8722;</button>
+      <button class="orgchart-zoom-btn" id="orgZoomReset" style="font-size:.7rem">&#10227;</button>
+    </div>
+
+    <div class="orgchart-eco-label" id="orgEcoLabel">
+      <h2 id="orgEcoTitle"></h2>
+      <p id="orgEcoSub"></p>
+      <div class="orgchart-eco-back" id="orgEcoBack">&#8592; Vista completa</div>
+    </div>
+
+    <div class="orgchart-legend">
+      <div class="orgchart-legend-item"><div class="orgchart-legend-dot" style="background:#C9A96E"></div>Holding</div>
+      <div class="orgchart-legend-item"><div class="orgchart-legend-dot" style="background:#6B1C23"></div>Partecipate</div>
+      <div class="orgchart-legend-item"><div class="orgchart-legend-dot" style="background:#8B2D35"></div>Controllate</div>
+      <div class="orgchart-legend-item"><div class="orgchart-legend-dot" style="background:#A94452"></div>Sub-controllate</div>
+    </div>
+
+    <div class="orgchart-panel" id="orgPanel">
+      <div id="orgPanelContent"></div>
+    </div>
+
+    <canvas id="orgCanvas"></canvas>
+  </section>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/orgchart.js"></script>
+</body>
+</html>
