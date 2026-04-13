@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.save();
       ctx.scale(dpr, dpr);
       // Contain-fit, positioned left at 32%
-      const scale = Math.min(cw / iw, ch / ih) * 1.15;
+      const scale = Math.min(cw / iw, ch / ih) * 3.0;
       const w = iw * scale;
       const h = ih * scale;
       const x = cw * 0.32 - w / 2;
