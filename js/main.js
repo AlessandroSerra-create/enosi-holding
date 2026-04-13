@@ -183,14 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.save();
       ctx.scale(dpr, dpr);
-      // Fill bg
-      ctx.fillStyle = '#FAFAF8';
-      ctx.fillRect(0, 0, cw, ch);
-      // Cover-fit
-      const scale = Math.max(cw / iw, ch / ih);
+      // Contain-fit, positioned left at 38%
+      const scale = Math.min(cw / iw, ch / ih) * 0.85;
       const w = iw * scale;
       const h = ih * scale;
-      const x = (cw - w) / 2;
+      const x = cw * 0.38 - w / 2;
       const y = (ch - h) / 2;
       ctx.drawImage(img, x, y, w, h);
       ctx.restore();
