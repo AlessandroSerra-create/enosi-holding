@@ -183,11 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.save();
       ctx.scale(dpr, dpr);
-      // Contain-fit, positioned left at 38%
-      const scale = Math.min(cw / iw, ch / ih) * 0.85;
+      // Contain-fit, positioned left at 32%
+      const scale = Math.min(cw / iw, ch / ih) * 1.15;
       const w = iw * scale;
       const h = ih * scale;
-      const x = cw * 0.38 - w / 2;
+      const x = cw * 0.32 - w / 2;
       const y = (ch - h) / 2;
       ctx.drawImage(img, x, y, w, h);
       ctx.restore();
