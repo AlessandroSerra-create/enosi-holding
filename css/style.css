@@ -2296,17 +2296,23 @@ h1, h2, h3, h4, h5, h6 {
     height: 14px !important;
   }
 
-  /* Fix 4: Team photos mobile */
-  .team-photo {
-    aspect-ratio: 1 !important;
-    max-height: 250px;
-  }
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 20px 16px !important;
-  }
+  /* Fix 4: Team photos mobile — uniform squares */
+  .team-grid,
   .team-grid-2 {
     grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px 16px !important;
+  }
+  .team-photo {
+    aspect-ratio: 1 / 1 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+  .team-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
   }
   .team-name { font-size: 0.9rem !important; }
   .team-role { font-size: 0.75rem !important; }
