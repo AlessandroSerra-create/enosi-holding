@@ -2177,10 +2177,30 @@ h1, h2, h3, h4, h5, h6 {
   .marquee-section { padding: 60px 0; }
 
   /* Scroll cards mobile */
+  .scroll-cards-container {
+    position: absolute !important;
+    bottom: 20px;
+    left: 16px;
+    right: 16px;
+    top: auto;
+    height: auto;
+    z-index: 10;
+  }
+
   .scroll-card {
-    right: auto; top: auto;
-    bottom: 20px; left: 5%; width: 90%;
-    transform: none;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin-bottom: 0;
+    padding: 16px !important;
+  }
+
+  .scroll-card p,
+  .scroll-card .card-detail {
+    display: none !important;
   }
 
   #enosiMap { height: 350px; }
