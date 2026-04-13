@@ -2178,24 +2178,32 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Scroll cards mobile */
   .scroll-cards-container {
-    position: absolute !important;
-    bottom: 20px;
-    left: 16px;
-    right: 16px;
-    top: auto;
-    height: auto;
+    position: fixed !important;
+    bottom: 16px !important;
+    left: 12px !important;
+    right: 12px !important;
+    top: auto !important;
+    width: auto !important;
+    height: auto !important;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
     z-index: 10;
   }
 
   .scroll-card {
     position: relative !important;
-    width: 100% !important;
-    max-width: 100% !important;
     right: auto !important;
+    left: auto !important;
     top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: calc(100vw - 24px) !important;
+    padding: 14px 18px !important;
     transform: none !important;
     margin-bottom: 0;
-    padding: 16px !important;
+    pointer-events: auto;
+    border-radius: 12px;
   }
 
   .scroll-card p,
