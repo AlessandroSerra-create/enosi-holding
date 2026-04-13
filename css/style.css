@@ -521,14 +521,14 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   overflow: hidden;
   -webkit-mask-image: radial-gradient(
-    ellipse 70% 65% at 38% 50%,
-    black 35%,
-    transparent 70%
+    ellipse 100% 100% at 38% 50%,
+    black 50%,
+    transparent 85%
   );
   mask-image: radial-gradient(
-    ellipse 70% 65% at 38% 50%,
-    black 35%,
-    transparent 70%
+    ellipse 100% 100% at 38% 50%,
+    black 50%,
+    transparent 85%
   );
 }
 
