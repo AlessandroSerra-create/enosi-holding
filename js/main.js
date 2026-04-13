@@ -161,8 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect = canvas.getBoundingClientRect();
       canvas.width = rect.width * dpr;
       canvas.height = rect.height * dpr;
-      canvas.style.width = rect.width + 'px';
-      canvas.style.height = rect.height + 'px';
     }
 
     for (let i = 1; i <= frameCount; i++) {
@@ -177,21 +175,25 @@ document.addEventListener('DOMContentLoaded', () => {
       currentFrameIndex = index;
       const img = images[Math.min(index, images.length - 1)];
       if (!img || !img.complete) return;
-      // Draw directly at canvas pixel dimensions (retina-ready)
-      const cw = canvas.width;
-      const ch = canvas.height;
+      const dpr = window.devicePixelRatio || 1;
+      const cw = canvas.width / dpr;
+      const ch = canvas.height / dpr;
       const iw = img.naturalWidth;
       const ih = img.naturalHeight;
-      // Scale globe to 60% of canvas height, position at 38% X
-      const scale = (ch * 0.6) / ih;
-      const w = iw * scale;
-      const h = ih * scale;
-      const x = (cw * 0.38) - (w / 2);
-      const y = (ch - h) / 2;
-      ctx.clearRect(0, 0, cw, ch);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.save();
+      ctx.scale(dpr, dpr);
+      // Fill bg
       ctx.fillStyle = '#FAFAF8';
       ctx.fillRect(0, 0, cw, ch);
+      // Cover-fit
+      const scale = Math.max(cw / iw, ch / ih);
+      const w = iw * scale;
+      const h = ih * scale;
+      const x = (cw - w) / 2;
+      const y = (ch - h) / 2;
       ctx.drawImage(img, x, y, w, h);
+      ctx.restore();
     }
 
     function initScrollDriven() {
