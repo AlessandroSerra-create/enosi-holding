@@ -510,7 +510,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Scroll Animation — Globe Canvas --- */
 .scroll-animation {
   position: relative;
-  height: 300vh;
+  height: 430vh;
   background: var(--bg-main);
 }
 
