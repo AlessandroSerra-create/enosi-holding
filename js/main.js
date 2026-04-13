@@ -183,13 +183,24 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.save();
       ctx.scale(dpr, dpr);
-      // Cover-fit: fills entire viewport, centered
-      const scale = Math.max(cw / iw, ch / ih);
-      const w = iw * scale;
-      const h = ih * scale;
-      const x = (cw - w) / 2;
-      const y = (ch - h) / 2;
-      ctx.drawImage(img, x, y, w, h);
+      const isMobile = window.innerWidth <= 768;
+      if (isMobile) {
+        // Contain-fit: full globe visible, centered horizontally, near top
+        const scale = Math.min(cw / iw, ch / ih) * 1.1;
+        const w = iw * scale;
+        const h = ih * scale;
+        const x = (cw - w) / 2;
+        const y = ch * 0.05;
+        ctx.drawImage(img, x, y, w, h);
+      } else {
+        // Desktop: cover-fit centered
+        const scale = Math.max(cw / iw, ch / ih);
+        const w = iw * scale;
+        const h = ih * scale;
+        const x = (cw - w) / 2;
+        const y = (ch - h) / 2;
+        ctx.drawImage(img, x, y, w, h);
+      }
       ctx.restore();
     }
 

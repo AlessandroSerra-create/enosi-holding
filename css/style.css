@@ -2169,8 +2169,19 @@ h1, h2, h3, h4, h5, h6 {
   .cta-section__title { font-size: 2rem; }
   .marquee-section { padding: 60px 0; }
 
+  /* Scroll animation mobile — globe top half, cards bottom */
+  .scroll-animation__sticky {
+    height: 100vh !important;
+  }
+
+  .scroll-animation__canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
   /* Scroll cards mobile — full width bottom sheet, alternating */
   .scroll-cards-container {
+    z-index: 20 !important;
     position: fixed !important;
     bottom: 0 !important;
     left: 0 !important;
