@@ -155,14 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let currentFrameIndex = 0;
-    const dpr = window.devicePixelRatio || 1;
 
     function resizeCanvas() {
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = window.innerWidth + 'px';
-      canvas.style.height = window.innerHeight + 'px';
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
     }
 
     for (let i = 1; i <= frameCount; i++) {
@@ -177,20 +177,21 @@ document.addEventListener('DOMContentLoaded', () => {
       currentFrameIndex = index;
       const img = images[Math.min(index, images.length - 1)];
       if (!img || !img.complete) return;
-      // Use CSS pixel dimensions (ctx transform handles DPR scaling)
-      const cssW = canvas.width / dpr;
-      const cssH = canvas.height / dpr;
-      // Scale to 60% of viewport height
-      const scale = (cssH * 0.6) / img.naturalHeight;
-      const drawW = img.naturalWidth * scale;
-      const drawH = img.naturalHeight * scale;
-      // Position globe at 38% X, centered Y
-      const offsetX = (cssW * 0.38) - (drawW / 2);
-      const offsetY = (cssH - drawH) / 2;
-      ctx.clearRect(0, 0, cssW, cssH);
+      // Draw directly at canvas pixel dimensions (retina-ready)
+      const cw = canvas.width;
+      const ch = canvas.height;
+      const iw = img.naturalWidth;
+      const ih = img.naturalHeight;
+      // Scale globe to 60% of canvas height, position at 38% X
+      const scale = (ch * 0.6) / ih;
+      const w = iw * scale;
+      const h = ih * scale;
+      const x = (cw * 0.38) - (w / 2);
+      const y = (ch - h) / 2;
+      ctx.clearRect(0, 0, cw, ch);
       ctx.fillStyle = '#FAFAF8';
-      ctx.fillRect(0, 0, cssW, cssH);
-      ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
+      ctx.fillRect(0, 0, cw, ch);
+      ctx.drawImage(img, x, y, w, h);
     }
 
     function initScrollDriven() {
