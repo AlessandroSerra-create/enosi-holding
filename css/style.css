@@ -119,7 +119,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar__logo { display: flex; align-items: center; }
 .navbar__logo img { height: 36px; width: auto; }
-.nav-logo-img { height: 28px; width: auto; display: block; }
+.nav-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+  max-width: 120px;
+}
+/* Fallback alt text styling if image fails */
+.navbar__logo img[alt] {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
 
 .navbar__logo-text {
   font-family: 'Playfair Display', serif;
@@ -2187,6 +2199,52 @@ h1, h2, h3, h4, h5, h6 {
 
   .section-angled { clip-path: polygon(0 2vw, 100% 0, 100% 100%, 0 100%); margin-top: -2vw; padding-top: calc(2vw + 60px); }
   .section-wave { margin-top: -2vw; padding-top: calc(2vw + 60px); }
+
+  /* Fix 1: Font sizes mobile */
+  h1 { font-size: 1.8rem !important; }
+  h2 { font-size: 1.4rem !important; }
+  h3 { font-size: 1.1rem !important; }
+  p, .panel-desc, .team-role { font-size: 0.85rem !important; }
+  .hero__title { font-size: 2rem !important; }
+  .hero__subtitle { font-size: 0.9rem !important; }
+
+  /* Fix 3: Values nav mobile */
+  .values-nav {
+    padding: 0 !important;
+    gap: 0 !important;
+    justify-content: space-between !important;
+  }
+  .values-nav-item {
+    padding: 12px 10px !important;
+    font-size: 0.75rem !important;
+    flex: 1;
+    text-align: center;
+    justify-content: center !important;
+  }
+  .values-nav-item .nav-icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .values-nav-item .nav-icon svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Fix 4: Team photos mobile */
+  .team-photo {
+    aspect-ratio: 1 !important;
+    max-height: 250px;
+  }
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px 16px !important;
+  }
+  .team-grid-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .team-name { font-size: 0.9rem !important; }
+  .team-role { font-size: 0.75rem !important; }
+  .team-email { font-size: 0.65rem !important; }
 }
 
 @media (max-width: 480px) {
