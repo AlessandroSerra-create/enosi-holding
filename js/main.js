@@ -155,10 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let currentFrameIndex = 0;
+    const dpr = window.devicePixelRatio || 1;
 
     function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = window.innerHeight + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
     for (let i = 1; i <= frameCount; i++) {
@@ -173,16 +177,19 @@ document.addEventListener('DOMContentLoaded', () => {
       currentFrameIndex = index;
       const img = images[Math.min(index, images.length - 1)];
       if (!img || !img.complete) return;
+      // Use CSS pixel dimensions (ctx transform handles DPR scaling)
+      const cssW = canvas.width / dpr;
+      const cssH = canvas.height / dpr;
       // Scale to 60% of viewport height
-      const scale = (canvas.height * 0.6) / img.naturalHeight;
+      const scale = (cssH * 0.6) / img.naturalHeight;
       const drawW = img.naturalWidth * scale;
       const drawH = img.naturalHeight * scale;
       // Position globe at 38% X, centered Y
-      const offsetX = (canvas.width * 0.38) - (drawW / 2);
-      const offsetY = (canvas.height - drawH) / 2;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const offsetX = (cssW * 0.38) - (drawW / 2);
+      const offsetY = (cssH - drawH) / 2;
+      ctx.clearRect(0, 0, cssW, cssH);
       ctx.fillStyle = '#FAFAF8';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillRect(0, 0, cssW, cssH);
       ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
     }
 
