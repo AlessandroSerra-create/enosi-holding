@@ -163,14 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 1; i <= frameCount; i++) {
       const img = new Image();
       img.onload = onFrameLoaded;
-      img.onerror = () => {
-        if (img.src.includes('frames-upscaled')) {
-          img.src = `frames/frame_${pad(i)}.jpg`;
-        } else {
-          onFrameLoaded();
-        }
-      };
-      img.src = `frames-upscaled/frame_${pad(i)}.webp`;
+      img.onerror = () => { onFrameLoaded(); };
+      img.src = `frames-webp/frame_${pad(i)}.webp`;
       images.push(img);
     }
 
